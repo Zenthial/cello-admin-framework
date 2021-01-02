@@ -7,5 +7,13 @@ return {
     -- Argument type checking should be done within the command function
     func = function()
         print("command working")
-    end
+    end,
+    --[[
+        0: Everyone
+        1: Mods
+        2: Admins
+        3: Staff
+        4: Game owner
+    ]]
+    permissionLevel = 0
 }

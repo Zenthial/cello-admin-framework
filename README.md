@@ -13,6 +13,18 @@ Group Admin: ❌
 
 Donation Perks: ❌
 
+Keybind Capability: ❌
+
+Player Identification: ❌
+
+    All: ❌
+
+    Others: ❌
+
+    Team Identification: ❌
+
+    Me: ❌
+
 Essential Admin Commands:
 
     Admin + Mod + Staff: ❌

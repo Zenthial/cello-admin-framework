@@ -1,12 +1,12 @@
-local Service = {}
-Service.Admins = {}
+local Registry = {}
+Registry.Admins = {}
 
-function Service:Initialize(core)
+function Registry:Initialize(core)
     self.core = core
     self:RegisterAdmins()
 end
 
-function Service:RegisterAdmins()
+function Registry:RegisterAdmins()
     for _, value in pairs(self.core.Settings.Staff) do
         self.Admins[value] = 3
     end
@@ -24,12 +24,12 @@ function Service:RegisterAdmins()
     
 end
 
-function Service:SetAdmin(userId: number, adminLevel: number)
-    Service.Admins[userId] = adminLevel
+function Registry:SetAdmin(userId: number, adminLevel: number)
+    Registry.Admins[userId] = adminLevel
     self.core.Data:WriteAdmin(userId, adminLevel)
 end
 
-function Service:CheckAdmin(playerObject: Player)
+function Registry:CheckAdmin(playerObject: Player)
     for index, value in pairs(self.Admins) do
         if typeof(index) == "string" then
             if playerObject.Name == index then
@@ -45,7 +45,7 @@ function Service:CheckAdmin(playerObject: Player)
     return false
 end
 
-function Service:GetAdminLevel(playerObject: Player)
+function Registry:GetAdminLevel(playerObject: Player)
     for index, value in pairs(self.Admins) do
         if typeof(index) == "string" then
             if playerObject.Name == index then
@@ -62,4 +62,4 @@ function Service:GetAdminLevel(playerObject: Player)
 end
 
 
-return Service
+return Registry

@@ -14,7 +14,7 @@ local Players = game:GetService("Players")
 local Cello = {}
 Cello.Data = require(script.Data)
 Cello.Commands = require(script.Commands)
-Cello.Service = require(script.Service)
+Cello.Registry = require(script.Registry)
 Cello.Util = require(script.Util)
 Cello.Maid = require(script.Maid)
 
@@ -31,7 +31,7 @@ local function playerAdded(player)
         local splitString = Cello.Util:StringSplitter(message);
 
         if Cello.Util:CheckPrefix(splitString[1], Cello.Settings.Prefix) then
-            if Cello.Service:CheckAdmin(player, Cello.Settings.Admins) then
+            if Cello.Registry:CheckAdmin(player, Cello.Settings.Admins) then
                 Cello.Commands:ParseCommand(splitString)
             end
         end
@@ -40,6 +40,7 @@ end
 
 function Cello:Initialize(settings)
     self.Settings = settings
+
     -- PlayerAdded Listener for the core aspect of the admin
     for _, player in pairs(Players:GetPlayers()) do
         playerAdded(player)
@@ -55,7 +56,7 @@ end
 function Cello:LoadSupportingModules()
    -- Initialize Supporting Modules
     self.Commands:Initialize(self)
-    self.Service:Initialize(self)
+    self.Registry:Initialize(self)
     self.Data:Initialize(self) 
 end
 
