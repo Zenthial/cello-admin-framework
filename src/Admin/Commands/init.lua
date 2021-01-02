@@ -7,7 +7,8 @@
 local Commands = {}
 Commands.CommandList = {}
 
-function Commands:Initialize()
+function Commands:Initialize(core)
+    self.core = core
     self:RegisterCommands()
 end
 

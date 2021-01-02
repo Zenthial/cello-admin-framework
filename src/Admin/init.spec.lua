@@ -1,6 +1,6 @@
 return function()
-    local Util = require(script.Parent.Core.Util)
-    local AdminService = require(script.Parent.Core.Service)
+    local Util = require(script.Parent.Util)
+    local Service = require(script.Parent.Service)
     local PlaceholderPlayer = {Name = "0", UserId = 9345226}
 
     describe("Prefix check", function()
@@ -17,11 +17,11 @@ return function()
 
     describe("Admin check", function()
         it("should approve the userid of tomspell", function()
-            expect(AdminService:CheckAdmin(PlaceholderPlayer)).to.equal(true)
+            expect(Service:CheckAdmin(PlaceholderPlayer)).to.equal(true)
         end)
 
         it("should fail a user not in the admin list", function()
-            expect(AdminService:CheckAdmin({Name = "Jeff", UserId = 123213})).to.equal(false)
+            expect(Service:CheckAdmin({Name = "Jeff", UserId = 123213})).to.equal(false)
         end)
     end)
 

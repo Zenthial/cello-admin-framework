@@ -1,22 +1,21 @@
-local Settings = require(script.Parent.Settings)
-
 local Service = {}
 Service.Admins = {}
 
-function Service:Initialize()
+function Service:Initialize(core)
+    self.core = core
     self:RegisterAdmins()
 end
 
 function Service:RegisterAdmins()
-    for _, value in pairs(Settings.Staff) do
+    for _, value in pairs(self.core.Settings.Staff) do
         self.Admins[value] = 3
     end
 
-    for _, value in pairs(Settings.Admins) do
+    for _, value in pairs(self.core.Settings.Admins) do
         self.Admins[value] = 2
     end
 
-    for _, value in pairs(Settings.Mods) do
+    for _, value in pairs(self.core.Settings.Mods) do
         self.Admins[value] = 1
     end
 
@@ -27,6 +26,7 @@ end
 
 function Service:SetAdmin(userId: number, adminLevel: number)
     Service.Admins[userId] = adminLevel
+    self.core.Data:WriteAdmin(userId, adminLevel)
 end
 
 function Service:CheckAdmin(playerObject: Player)

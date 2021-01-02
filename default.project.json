@@ -8,6 +8,10 @@
         "$path": "src/Admin"
       },
 
+      "Loader": {
+        "$path": "src/Loader"
+      },
+
       "Tests": {
         "$path": "src/Tests"
       }
