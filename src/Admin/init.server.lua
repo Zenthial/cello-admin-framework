@@ -21,8 +21,7 @@ Players.PlayerAdded:Connect(function(player)
         local splitString = Util:StringSplitter(message);
         if Util:CheckPrefix(splitString[1], Settings.prefix) then
             if Util:CheckAdmin(player, Settings.admins) then
-                -- command handling here
-                
+                Commands:ParseCommand(splitString)
             end
         end
     end)

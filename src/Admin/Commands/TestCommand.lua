@@ -5,6 +5,6 @@ return {
     aliases = {"tester", "test"},
     -- The function that is run when the command is called
     func = function()
-        
+        print("command working")
     end
 }
