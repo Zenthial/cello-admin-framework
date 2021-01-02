@@ -1,8 +1,8 @@
 return function()
     local Util = require(script.Parent.Util)
+    local AdminService = require(script.Parent.Service)
     local Placeholder1Player = {Name = "tomspell", UserId = 0}
     local Placeholder2Player = {Name = "0", UserId = 9345226}
-    local PlaceholderAdminList = {"tomspell", 9345226}
 
     describe("Prefix check", function()
         it("should return true with the prefix !", function()
@@ -17,16 +17,12 @@ return function()
     end)
 
     describe("Admin check", function()
-        it("should approve the name tomspell", function()
-            expect(Util:CheckAdmin(Placeholder1Player, PlaceholderAdminList)).to.equal(true)
-        end)
-
         it("should approve the userid of tomspell", function()
-            expect(Util:CheckAdmin(Placeholder2Player, PlaceholderAdminList)).to.equal(true)
+            expect(AdminService:CheckAdmin(Placeholder2Player)).to.equal(true)
         end)
 
         it("should fail a user not in the admin list", function()
-            expect(Util:CheckAdmin({Name = "Jeff", UserId = 123213}, PlaceholderAdminList)).to.equal(false)
+            expect(AdminService:CheckAdmin({Name = "Jeff", UserId = 123213})).to.equal(false)
         end)
     end)
 

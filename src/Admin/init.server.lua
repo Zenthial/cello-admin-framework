@@ -10,22 +10,36 @@
 local Players = game:GetService("Players")
 
 -- Admin Variables
+local Data = require(script.Data)
 local Commands = require(script.Commands)
+local Service = require(script.Service)
 local Settings = require(script.Settings)
 local Util = require(script.Util)
 
--- Core
+-- Initialize Supporting Modules
 coroutine.wrap(function()
-    Commands:RegisterCommands()
+    Commands:Initialize()
+    Service:Initialize()
+    Data:Initialize()
 end)()
-
+-- PlayerAdded Listener for the core aspect of the admin
 Players.PlayerAdded:Connect(function(player)
+    local donor = Instance.new("NumberValue")
+    --[[
+        donations will be done via gamepasses, can have 1-5/6
+        donor value = highest purchased
+    ]]
+    donor.Value = 0
+    donor.Parent = player 
+    -- Chatted listener for typed admin commands
     player.Chatted:Connect(function(message)
         local splitString = Util:StringSplitter(message);
-        if Util:CheckPrefix(splitString[1], Settings.prefix) then
-            if Util:CheckAdmin(player, Settings.admins) then
+
+        if Service:CheckPrefix(splitString[1], Settings.Prefix) then
+            if Service:CheckAdmin(player, Settings.Admins) then
                 Commands:ParseCommand(splitString)
             end
         end
+
     end)
 end)

@@ -7,6 +7,10 @@
 local Commands = {}
 Commands.CommandList = {}
 
+function Commands:Initialize()
+    self:RegisterCommands()
+end
+
 function Commands:RegisterCommands()
     self.CommandList = {}
     for _, module in pairs(script:GetDescendants()) do
@@ -41,7 +45,7 @@ end
 
 function Commands:RunCommand(commandInfo, stringArray)
     local func = commandInfo.func
-    local command = table.remove(stringArray, 1)
+    table.remove(stringArray, 1)
     func(unpack(stringArray))
 end
 

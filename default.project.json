@@ -1,5 +1,5 @@
 {
-  "name": "tom's admin commands",
+  "name": "Cello Admin Framework",
   "tree": {
     "$className": "DataModel",
     "ServerScriptService": {
