@@ -1,4 +1,4 @@
-# Tom's Admin Commands
+# Cello Admin Framework
 
 Basic lightweight admin commands with a flexible structure. 
 
