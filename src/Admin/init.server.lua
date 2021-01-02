@@ -10,11 +10,12 @@
 local Players = game:GetService("Players")
 
 -- Admin Modules
-local Data = require(script.Data)
-local Commands = require(script.Commands)
-local Service = require(script.Service)
-local Settings = require(script.Settings)
-local Util = require(script.Util)
+local Core = script.Core
+local Data = require(Core.Data)
+local Commands = require(Core.Commands)
+local Service = require(Core.Service)
+local Settings = require(Core.Settings)
+local Util = require(Core.Util)
 
 -- Initialize Supporting Modules
 coroutine.wrap(function()
