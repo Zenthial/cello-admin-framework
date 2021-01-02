@@ -10,14 +10,14 @@ Leveled Admin: ✅
 Group Admin: ❌
 Donation Perks: ❌
 Essential Admin Commands:
-    \nAdmin + Mod + Staff: ❌
-    \nUnadmin + Unmod + Unstaff: ❌
-    \nKill: ❌
-    \nDamage: ❌
-    \nKick: ❌
-    \nBan: ❌
-    \nFly: ❌
-    \nNoclip: ❌
-    \nMessage: ❌
-    \nHeader: ❌
-    \nTeam: ❌
+Admin + Mod + Staff: ❌
+Unadmin + Unmod + Unstaff: ❌
+Kill: ❌
+Damage: ❌
+Kick: ❌
+Ban: ❌
+Fly: ❌
+Noclip: ❌
+Message: ❌
+Header: ❌
+Team: ❌
