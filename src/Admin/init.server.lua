@@ -9,7 +9,7 @@
 -- Services
 local Players = game:GetService("Players")
 
--- Admin Variables
+-- Admin Modules
 local Data = require(script.Data)
 local Commands = require(script.Commands)
 local Service = require(script.Service)
