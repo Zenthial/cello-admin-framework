@@ -41,7 +41,7 @@ end
 
 function Commands:RunCommand(commandInfo, stringArray)
     local func = commandInfo.func
-    local newArray = table.remove(stringArray, 1)
+    local command = table.remove(stringArray, 1)
     func(unpack(stringArray))
 end
 
