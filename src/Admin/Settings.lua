@@ -1,0 +1,4 @@
+return {
+    admins = {"tomspell"},
+    prefix = "!"
+}

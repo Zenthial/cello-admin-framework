@@ -1,0 +1,16 @@
+{
+  "name": "tom's admin commands",
+  "tree": {
+    "$className": "DataModel",
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Core": {
+        "$path": "src/Admin"
+      },
+
+      "Tests": {
+        "$path": "src/Tests"
+      }
+    }
+  }
+}
